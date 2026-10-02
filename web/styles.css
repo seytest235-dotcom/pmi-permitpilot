@@ -1,0 +1,12 @@
+:root {
+  --navy: #14213D; --navy-2: #1F3A68; --orange: #E8590C; --white: #FFFFFF;
+  --pass: #1B7F3B; --flag: #B54708; --fail: #B42318; --review: #5B4BB7;
+  --bg: #F5F7FA; --line: #D9DEE7; --muted: #4A5568;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 18px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--navy); background: var(--bg); }
+.topbar { background: var(--navy); color: var(--white); padding: 16px 32px; }
+.brand { font-size: 28px; font-weight: 800; letter-spacing: .5px; }
+.brand span { color: var(--orange); }
+.container { max-width: 1400px; margin: 0 auto; padding: 24px 32px; }
+.footer { text-align: center; padding: 20px; color: var(--muted); border-top: 1px solid var(--line); }

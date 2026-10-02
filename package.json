@@ -1,0 +1,13 @@
+{
+  "name": "permitpilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-assisted contract and permit review checklist for project managers (hackathon demo).",
+  "scripts": {
+    "start": "node server.js",
+    "validate": "node scripts/validate.js",
+    "analyze": "node analyze.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

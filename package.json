@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "validate": "node scripts/validate.js",
-    "analyze": "node analyze.js"
+    "bundle": "node scripts/bundle.js",
+    "analyze": "node analyze.js",
+    "test": "node scripts/validate.js"
   },
   "engines": {
     "node": ">=18"

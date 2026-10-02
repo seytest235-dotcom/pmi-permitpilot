@@ -19,7 +19,10 @@ const TYPES = {
 
 http.createServer((req, res) => {
   let urlPath = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-  if (urlPath === '/') urlPath = '/web/index.html';
+  if (urlPath === '/' || urlPath === '/web') {
+    res.writeHead(302, { Location: '/web/' }); return res.end();
+  }
+  if (urlPath.endsWith('/')) urlPath += 'index.html';
   const file = path.normalize(path.join(ROOT, urlPath));
   if (!file.startsWith(ROOT) || file.includes(`${path.sep}.git`)) {
     res.writeHead(403); return res.end('Forbidden');

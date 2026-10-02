@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'No install needed: static site'",
+  "buildCommand": "node scripts/build-static.js",
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/", "destination": "/web/", "permanent": false }
+  ],
+  "headers": [
+    { "source": "/analysis.json", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
+  ]
+}

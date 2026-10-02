@@ -28,6 +28,8 @@ playbook.md          editable review rules (PMBOK-aligned, customise per organis
 analysis.json        saved analysis the dashboard loads (the demo depends only on this)
 analyze.js           optional: re-runs the analysis with the Anthropic API
 server.js            zero-dependency static server (`npm start`)
+vercel.json          static deploy config (builds dist/ via scripts/build-static.js, no answer key)
+scripts/             validate.js, check-answer-key.js, bundle.js, build-static.js
 web/                 the single-page dashboard (plain HTML/CSS/JS)
 sample-data/         fictional contract, permits, and the hidden ANSWER_KEY.md
 ```
@@ -147,4 +149,5 @@ Dates are ISO `YYYY-MM-DD`. Confidence is a number 0–1.
 - Keep quotes short and **verbatim**; `npm run validate` (scripts/validate.js) checks that
   every quote exists in its source document and every `rule_id` exists in the playbook.
 - Do not make the demo depend on network access or `analyze.js`.
+- Run `npm test` before committing; after editing analysis.json or sample documents run `npm run bundle`.
 - Keep the UI free of clutter; prefer fewer, larger elements.

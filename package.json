@@ -8,7 +8,8 @@
     "validate": "node scripts/validate.js",
     "bundle": "node scripts/bundle.js",
     "analyze": "node analyze.js",
-    "test": "node scripts/validate.js"
+    "test": "node scripts/validate.js && node scripts/check-answer-key.js",
+    "build": "node scripts/build-static.js"
   },
   "engines": {
     "node": ">=18"

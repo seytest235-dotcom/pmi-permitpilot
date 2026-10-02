@@ -168,8 +168,18 @@
   }
 
   // ---------- Project ----------
+  function normalise(d) {
+    d.meta = d.meta || {}; d.meta.documents = d.meta.documents || [];
+    d.project = d.project || { name: 'Untitled project' }; d.project.dates = d.project.dates || {}; d.project.parties = d.project.parties || [];
+    ['checklist_items', 'permits', 'cross_checks', 'actions'].forEach((k) => { d[k] = Array.isArray(d[k]) ? d[k] : []; });
+    d.timeline = d.timeline || {}; ['milestones', 'permit_windows', 'conflicts', 'securities'].forEach((k) => { d.timeline[k] = d.timeline[k] || []; });
+    if (!d.timeline.range) d.timeline.range = { start: d.project.dates.contract_date || '2026-01-01', end: d.project.dates.completion || '2027-12-31' };
+    d.checklist_items.forEach((c) => { c.source = c.source || { document: '', section: '' }; });
+    return d;
+  }
+
   function openProject(data) {
-    S.data = data;
+    S.data = normalise(data);
     S.tab = 'checklist'; S.filter = 'all'; S.open.clear(); S.notesOpen.clear(); S.conflict = null;
     loadReview();
     document.getElementById('topActions').hidden = false;
@@ -232,7 +242,7 @@
     const items = S.data.checklist_items;
     const v = items.filter((i) => (S.review[i.id] || {}).s === 'verified').length;
     const dm = items.filter((i) => (S.review[i.id] || {}).s === 'dismissed').length;
-    const pct = Math.round(((v + dm) / items.length) * 100);
+    const pct = items.length ? Math.round(((v + dm) / items.length) * 100) : 0;
     document.getElementById('progress').innerHTML = `
       <div class="label">PM review: ${v + dm} / ${items.length} items</div>
       <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="${items.length}" aria-valuenow="${v + dm}" aria-label="Items reviewed"><div style="width:${pct}%"></div></div>
@@ -390,6 +400,7 @@
       <h2>Permit tracker</h2>
       <p class="intro">Permits the contract requires (Annex C, milestones and clauses) vs. what is on file. Holder names and site addresses are checked against the contract.</p>
       <div class="legend">${Object.values(PSTATUS).map((s) => `<span class="badge ${s.cls}">${s.icon} ${s.label}</span>`).join('')}</div>
+      ${list.length ? '' : '<div class="empty">No permits found in the analysis.</div>'}
       <div class="permit-grid">
         ${list.map((p) => {
           const st = PSTATUS[p.status] || PSTATUS.missing;
@@ -413,7 +424,7 @@
               <dt>Needed for</dt><dd>${(p.required_for || []).map((id) => `${esc(id)} ${esc(ms[id] ? ms[id].name : '')} <span class="muted">(from ${fmtDate(ms[id] && ms[id].start)})</span>`).join('<br>') || '—'}</dd>
             </dl>
             <div class="notes">${esc(p.notes || '')}</div>
-            <div><button class="btn btn-sm" data-action="open-doc" data-doc="${esc(p.source.document)}" data-quote="">View source: ${esc(p.source.document)} ↗</button></div>
+            ${p.source && docById(p.source.document) ? `<div><button class="btn btn-sm" data-action="open-doc" data-doc="${esc(p.source.document)}" data-quote="">View source: ${esc(p.source.document)} ↗</button></div>` : ''}
           </article>`;
         }).join('')}
       </div>`;
@@ -501,6 +512,7 @@
           </div>
         </div>
       </div>
+      ${t.conflicts.length ? '' : '<div class="empty" style="margin-top:18px">✔ No date conflicts detected between milestones and permits.</div>'}
       <div class="conflict-list">
         ${t.conflicts.map((c) => `
           <button class="ccard" id="cc-${esc(c.id)}" aria-pressed="${S.conflict === c.id}" data-action="conflict" data-id="${esc(c.id)}">
@@ -520,6 +532,7 @@
     return `
       <h2>Cross-document findings</h2>
       <p class="intro">Issues that only appear when the contract and the permits are read <b>together</b>. Each one quotes both sides.</p>
+      ${list.length ? '' : '<div class="empty">No cross-document findings.</div>'}
       ${list.map((x) => `
         <article class="xc ${esc(x.severity)} ${x.status === 'ok' ? 'ok' : ''}" id="xc-${esc(x.id)}">
           <div class="head">
@@ -529,7 +542,7 @@
           </div>
           <p class="finding">${esc(x.finding)}</p>
           <div class="evi-grid">
-            ${x.evidence.map((e) => `
+            ${(x.evidence || []).map((e) => `
               <div class="evi-card">
                 <div class="doc"><span class="xdoc">${esc(e.source.document)}</span>${esc(shortDoc(e.source.document))} · ${esc(e.source.section)}</div>
                 <blockquote class="quote">“${esc(e.quote)}”</blockquote>

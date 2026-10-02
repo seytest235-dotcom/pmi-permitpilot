@@ -1,0 +1,1330 @@
+{
+  "meta": {
+    "generated_at": "2026-10-02T09:00:00Z",
+    "review_date": "2026-10-02",
+    "generator": "Claude (manual review of sample documents against playbook.md)",
+    "playbook": "playbook.md",
+    "documents": [
+      {
+        "id": "CON",
+        "title": "Office Fit-Out Works Contract HRH-FO-2026-012",
+        "file": "sample-data/contract/CONTRACT_Office_FitOut_HRH-FO-2026-012.md",
+        "pages": 7
+      },
+      {
+        "id": "PRM-01",
+        "title": "Building Permit SLM-BP-2026-04417",
+        "file": "sample-data/permits/PRM-01_Building_Permit.md",
+        "pages": 1
+      },
+      {
+        "id": "PRM-02",
+        "title": "Electrical Permit SLM-EP-2026-01982",
+        "file": "sample-data/permits/PRM-02_Electrical_Permit.md",
+        "pages": 1
+      },
+      {
+        "id": "PRM-03",
+        "title": "Mechanical Permit SLM-MP-2026-00731",
+        "file": "sample-data/permits/PRM-03_Mechanical_Permit.md",
+        "pages": 1
+      },
+      {
+        "id": "PRM-04",
+        "title": "Sanitary/Plumbing Permit SLM-SP-2026-00512",
+        "file": "sample-data/permits/PRM-04_Sanitary_Plumbing_Permit.md",
+        "pages": 1
+      },
+      {
+        "id": "PRM-05",
+        "title": "Barangay Construction Clearance BTV-CC-2025-0388",
+        "file": "sample-data/permits/PRM-05_Barangay_Construction_Clearance.md",
+        "pages": 1
+      },
+      {
+        "id": "REG",
+        "title": "Permit Register (Contractor)",
+        "file": "sample-data/permits/PERMIT_REGISTER.md",
+        "pages": 1
+      }
+    ],
+    "disclaimer": "AI-assisted review. Verify with qualified professionals. Not legal advice."
+  },
+  "project": {
+    "name": "Level 12 and Level 14 Office Fit-Out, Meridian Point Tower",
+    "contract_ref": "HRH-FO-2026-012",
+    "site_address": "Meridian Point Tower, Levels 12 and 14, 88 Sampaguita Ridge Avenue, Barangay Tala Verde, City of San Lorenzo del Mar",
+    "contract_price": "PHP 48,750,000.00 (VAT inclusive, lump sum)",
+    "parties": [
+      {
+        "role": "Employer",
+        "name": "Halcyon Ridge Holdings, Inc."
+      },
+      {
+        "role": "Contractor",
+        "name": "Bluefin Interiors & Construction Corp."
+      },
+      {
+        "role": "Project Manager",
+        "name": "Andrea L. Quintos (Employer's PM)"
+      }
+    ],
+    "dates": {
+      "contract_date": "2026-09-15",
+      "start": "2026-10-19",
+      "completion": "2027-03-31",
+      "defects_liability_end": "2028-03-31"
+    }
+  },
+  "impact": {
+    "documents_reviewed": 7,
+    "pages_reviewed": 13,
+    "rules_checked": 30,
+    "manual_review_minutes_estimate": 240,
+    "permitpilot_minutes_estimate": 25,
+    "basis": "Estimate only. Manual: about 6 minutes per playbook rule (30 rules) plus about 60 minutes cross-checking 5 permits and the register against the milestone schedule. With PermitPilot: about 25 minutes for the PM to verify each finding against its quoted source."
+  },
+  "checklist_items": [
+    {
+      "id": "CHK-01",
+      "rule_id": "C-SCO-01",
+      "category": "Scope",
+      "title": "Scope defined and bounded",
+      "status": "pass",
+      "severity": "High",
+      "finding": "The scope is set out in Annex A, and anything outside it is handled as a Variation.",
+      "evidence_quote": "The scope of the Works is limited to the items listed in Annex A. Any work not listed in Annex A shall be treated as a Variation under Clause 10.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 2.2"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Confirm Annex A matches the approved design and tender; record exclusions in the scope baseline."
+    },
+    {
+      "id": "CHK-02",
+      "rule_id": "C-SCO-02",
+      "category": "Scope",
+      "title": "Employer-supplied items have firm dates",
+      "status": "needs_review",
+      "severity": "Medium",
+      "finding": "Furniture and AV equipment are supplied by the Employer 'on dates to be agreed'. No firm date or lead time is set, which could later support a delay claim under Clause 11.1(b). Unclear whether dates are fixed elsewhere (e.g. the Specifications, which were not provided).",
+      "evidence_quote": "The Employer shall deliver loose furniture and the audio-visual equipment to the Site on dates to be agreed.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 5.3"
+      },
+      "confidence": 0.6,
+      "suggested_action": "Agree firm delivery dates for furniture and AV and add them to the baseline schedule and interface register."
+    },
+    {
+      "id": "CHK-03",
+      "rule_id": "C-PAY-01",
+      "category": "Price and payment",
+      "title": "Price basis stated",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Fixed lump sum of PHP 48,750,000.00, adjustable only for Variations.",
+      "evidence_quote": "The Contract Price is a fixed lump sum and is not subject to adjustment except for Variations under Clause 10",
+      "source": {
+        "document": "CON",
+        "section": "Clause 6.2"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Record the lump-sum basis in the cost baseline."
+    },
+    {
+      "id": "CHK-04",
+      "rule_id": "C-PAY-02",
+      "category": "Price and payment",
+      "title": "Payment within 60 days",
+      "status": "flag",
+      "severity": "Medium",
+      "finding": "Payment is due 90 days after invoice, 30 days beyond the 60-day policy limit. The Contractor can only terminate after a further 60 days overdue (Clause 19.2), so cash may be outstanding for up to 150 days.",
+      "evidence_quote": "The Employer shall pay each certified progress claim within ninety (90) days after receipt of a valid invoice.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 7.3"
+      },
+      "confidence": 0.97,
+      "suggested_action": "Negotiate payment terms to 60 days or less, or have Finance confirm the cash-flow impact and contingency."
+    },
+    {
+      "id": "CHK-05",
+      "rule_id": "C-PAY-03",
+      "category": "Price and payment",
+      "title": "Retention and release",
+      "status": "pass",
+      "severity": "Low",
+      "finding": "Retention is 5% (within the 10% limit), released half at Practical Completion and half after the defects period.",
+      "evidence_quote": "The Employer shall retain five percent (5%) of each progress payment. Half of the retention shall be released upon Practical Completion and the balance upon expiry of the Defects Liability Period.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 7.4"
+      },
+      "confidence": 0.96,
+      "suggested_action": "Track retention amounts and release dates in the cost log."
+    },
+    {
+      "id": "CHK-06",
+      "rule_id": "C-SCH-01",
+      "category": "Schedule and milestones",
+      "title": "Dates, milestones and programme",
+      "status": "pass",
+      "severity": "High",
+      "finding": "Commencement 19 Oct 2026, Practical Completion 31 Mar 2027, nine milestones in Annex B, and a programme updated every two weeks (Clause 4.3).",
+      "evidence_quote": "The Contractor shall achieve each milestone listed in Annex B by the milestone dates stated in Annex B.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 8.2 and Annex B"
+      },
+      "confidence": 0.93,
+      "suggested_action": "Load the Annex B milestones into the schedule baseline."
+    },
+    {
+      "id": "CHK-07",
+      "rule_id": "C-SCH-02",
+      "category": "Schedule and milestones",
+      "title": "Extension of time incl. permit delays",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Extension of time covers Variations, Employer acts, Force Majeure and authority delays in issuing permits, with a 14-day notice requirement.",
+      "evidence_quote": "(d) delay by a public authority in issuing a Permit, provided the Contractor applied for it on time and in full.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 11.1"
+      },
+      "confidence": 0.9,
+      "suggested_action": "Set up an extension-of-time register and diarise the 14-day notice deadline."
+    },
+    {
+      "id": "CHK-08",
+      "rule_id": "C-LD-01",
+      "category": "Delay penalties",
+      "title": "Liquidated damages capped",
+      "status": "flag",
+      "severity": "High",
+      "finding": "LDs are 0.5% of the Contract Price per day (about PHP 243,750 per day) with no cap. Clause 17.1 also excludes LDs from the liability cap, so exposure is unlimited. A 10% cap would be reached after 20 days of delay.",
+      "evidence_quote": "liquidated damages at the rate of one-half of one percent (0.5%) of the Contract Price for each calendar day of delay until Practical Completion is achieved.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 12.1 (see also Clause 17.1)"
+      },
+      "confidence": 0.96,
+      "suggested_action": "Negotiate an LD cap of 10% of the Contract Price or less; meanwhile log uncapped LD exposure in the risk register and escalate."
+    },
+    {
+      "id": "CHK-09",
+      "rule_id": "C-CHG-01",
+      "category": "Change management",
+      "title": "Written variation procedure",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Variations must be instructed in writing and quoted for price and programme impact within 7 days (Clause 10.2).",
+      "evidence_quote": "No Variation shall be valid unless instructed in writing by the Project Manager.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 10.1"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Use a change log; require the quotation before changed work starts."
+    },
+    {
+      "id": "CHK-10",
+      "rule_id": "C-WAR-01",
+      "category": "Warranties",
+      "title": "Defects liability and warranties",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "12-month defects period with 14-day / 24-hour response times and manufacturer warranties assigned to the Employer.",
+      "evidence_quote": "The Defects Liability Period is twelve (12) months from the date of Practical Completion.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 13.1"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Diarise the end of the defects period (31 Mar 2028) and collect warranties at handover."
+    },
+    {
+      "id": "CHK-11",
+      "rule_id": "C-INS-01",
+      "category": "Insurance and bonds",
+      "title": "Insurance covers full period",
+      "status": "pass",
+      "severity": "High",
+      "finding": "Contractor's All Risk insurance covers the full Contract Price until the end of the defects period; third-party liability for the same period.",
+      "evidence_quote": "for not less than the full Contract Price, from the Commencement Date until the end of the Defects Liability Period.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 14.1"
+      },
+      "confidence": 0.92,
+      "suggested_action": "Obtain insurance certificates before 19 Oct 2026 and set expiry reminders."
+    },
+    {
+      "id": "CHK-12",
+      "rule_id": "C-BND-01",
+      "category": "Insurance and bonds",
+      "title": "Performance bond covers completion",
+      "status": "flag",
+      "severity": "High",
+      "finding": "The performance bond expires on 28 Feb 2027, 31 days BEFORE Practical Completion (31 Mar 2027). Policy requires cover to at least PC + 28 days (28 Apr 2027). The last two months of work are unsecured.",
+      "evidence_quote": "The performance bond shall remain valid until 28 February 2027.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 15.2"
+      },
+      "confidence": 0.97,
+      "suggested_action": "Require the bond to be extended to at least 28 Apr 2027 (or the end of the defects period) before mobilisation."
+    },
+    {
+      "id": "CHK-13",
+      "rule_id": "C-LIA-01",
+      "category": "Liability and indemnity",
+      "title": "Liability cap and carve-outs",
+      "status": "flag",
+      "severity": "Medium",
+      "finding": "Liability is capped at 100% of the Contract Price and consequential loss is excluded, but liquidated damages are carved out of the cap, which leaves delay exposure unlimited (see CHK-08).",
+      "evidence_quote": "save for liquidated damages under Clause 12",
+      "source": {
+        "document": "CON",
+        "section": "Clause 17.1"
+      },
+      "confidence": 0.85,
+      "suggested_action": "Have Legal review the carve-out; bring LDs within the cap or add a separate LD cap."
+    },
+    {
+      "id": "CHK-14",
+      "rule_id": "C-IND-01",
+      "category": "Liability and indemnity",
+      "title": "Mutual, fault-based indemnities",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Each party indemnifies the other for its own negligence (Clauses 16.1 and 16.2).",
+      "evidence_quote": "The Employer shall indemnify the Contractor against claims arising from the negligence of the Employer or its other contractors.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 16.2"
+      },
+      "confidence": 0.9,
+      "suggested_action": "Confirm the insurance responds to these indemnities."
+    },
+    {
+      "id": "CHK-15",
+      "rule_id": "C-TRM-01",
+      "category": "Termination",
+      "title": "Balanced termination rights",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Employer may terminate on 14 days' notice for defined defaults; Contractor on 28 days' notice for non-payment; work done is paid on termination.",
+      "evidence_quote": "Upon termination, the Contractor shall be paid for work properly executed up to the date of termination",
+      "source": {
+        "document": "CON",
+        "section": "Clause 19.3"
+      },
+      "confidence": 0.92,
+      "suggested_action": "Record termination triggers and notice periods in the contract summary."
+    },
+    {
+      "id": "CHK-16",
+      "rule_id": "C-FM-01",
+      "category": "Force majeure",
+      "title": "Force majeure incl. typhoon",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Typhoon, flood and earthquake are covered, with a 7-day notice and a 90-day long-stop termination right (Clause 20.3).",
+      "evidence_quote": "including typhoon, earthquake, flood, fire, epidemic, war, civil disturbance and acts of government",
+      "source": {
+        "document": "CON",
+        "section": "Clause 20.1"
+      },
+      "confidence": 0.94,
+      "suggested_action": "Add typhoon-season risk to the risk register for Oct-Dec works."
+    },
+    {
+      "id": "CHK-17",
+      "rule_id": "C-DIS-01",
+      "category": "Disputes",
+      "title": "Tiered dispute resolution",
+      "status": "pass",
+      "severity": "Low",
+      "finding": "Negotiation, then mediation, then construction arbitration; work continues during disputes.",
+      "evidence_quote": "The Contractor shall continue to perform the Works during any dispute.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 22.3"
+      },
+      "confidence": 0.93,
+      "suggested_action": "Record the escalation path and contacts in the stakeholder plan."
+    },
+    {
+      "id": "CHK-18",
+      "rule_id": "C-SUB-01",
+      "category": "Subcontracting",
+      "title": "Subcontracting needs consent",
+      "status": "pass",
+      "severity": "Low",
+      "finding": "Employer consent is required and the Contractor stays responsible for subcontractors (Clause 18.2).",
+      "evidence_quote": "The Contractor shall not subcontract any part of the Works without the prior written consent of the Employer",
+      "source": {
+        "document": "CON",
+        "section": "Clause 18.1"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Keep an approved-subcontractor list and check licences."
+    },
+    {
+      "id": "CHK-19",
+      "rule_id": "C-NOT-01",
+      "category": "Notices",
+      "title": "Notices and notice periods",
+      "status": "pass",
+      "severity": "Low",
+      "finding": "Written notices with deemed-receipt rules; delay notice period is 14 days (within the 28-day limit).",
+      "evidence_quote": "All notices shall be in writing and delivered by hand, courier or e-mail",
+      "source": {
+        "document": "CON",
+        "section": "Clause 21.1"
+      },
+      "confidence": 0.9,
+      "suggested_action": "Set up a correspondence register with notice-deadline reminders."
+    },
+    {
+      "id": "CHK-20",
+      "rule_id": "C-REN-01",
+      "category": "Renewal",
+      "title": "No automatic renewal",
+      "status": "pass",
+      "severity": "Low",
+      "finding": "The contract does not renew automatically; further works need a new agreement.",
+      "evidence_quote": "This Contract shall not renew automatically.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 23.2"
+      },
+      "confidence": 0.97,
+      "suggested_action": "Diarise the contract end (end of defects period and final account)."
+    },
+    {
+      "id": "CHK-21",
+      "rule_id": "C-PRM-01",
+      "category": "Permit responsibility",
+      "title": "Every permit has an owner",
+      "status": "missing",
+      "severity": "High",
+      "finding": "Clause 4.6 requires a Signage Permit, and Annex B lists it for MS-7, but it is in neither Part A (Contractor) nor Part B (Employer) of Annex C. Nobody is responsible for obtaining it.",
+      "evidence_quote": "Exterior signage on the Level 12 facade shall be installed only upon issuance of the Signage Permit by the City.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 4.6 vs. Annex C"
+      },
+      "confidence": 0.93,
+      "suggested_action": "Assign the Signage Permit to a party by written instruction or amendment and add it to the RACI."
+    },
+    {
+      "id": "CHK-22",
+      "rule_id": "C-PRM-02",
+      "category": "Permit responsibility",
+      "title": "No work before permits; name and address rule",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "The contract forbids work before a permit is valid and requires permits in the Employer's exact name and Site address (Clause 9.3).",
+      "evidence_quote": "No part of the Works that requires a Permit shall commence before that Permit has been issued and is valid.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 9.4"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Make 'permit valid?' a gate in the work-start checklist."
+    },
+    {
+      "id": "CHK-23",
+      "rule_id": "P-VAL-01",
+      "category": "Permit validity",
+      "title": "Permits in force",
+      "status": "flag",
+      "severity": "High",
+      "finding": "The Barangay Construction Clearance EXPIRED on 31 Aug 2026, before today and before mobilisation (MS-1, 19 Oct 2026). The other four permits on file are in force.",
+      "evidence_quote": "Valid Until | 31 August 2026",
+      "source": {
+        "document": "PRM-05",
+        "section": "Permit details"
+      },
+      "confidence": 0.98,
+      "suggested_action": "Employer to renew the Barangay Construction Clearance before 19 Oct 2026; do not mobilise without it."
+    },
+    {
+      "id": "CHK-24",
+      "rule_id": "P-VAL-02",
+      "category": "Permit validity",
+      "title": "Permit validity covers milestones",
+      "status": "flag",
+      "severity": "High",
+      "finding": "MS-3 Electrical rough-in starts 16 Nov 2026, but the Electrical Permit only takes effect on 1 Dec 2026. That is 15 days of work scheduled before the permit is valid, which breaches Clause 9.4 and permit condition 1.",
+      "evidence_quote": "Valid From | 1 December 2026",
+      "source": {
+        "document": "PRM-02",
+        "section": "Permit details"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Re-sequence MS-3 to start on or after 1 Dec 2026, or ask the issuing office to advance the effective date."
+    },
+    {
+      "id": "CHK-25",
+      "rule_id": "P-NAM-01",
+      "category": "Permit name and site match",
+      "title": "Permit holder name matches",
+      "status": "flag",
+      "severity": "High",
+      "finding": "The Mechanical Permit is issued to 'Halcyon Ridge Holding Corp.', not the contracting party 'Halcyon Ridge Holdings, Inc.' Clause 9.3 requires the exact name. Other permits match.",
+      "evidence_quote": "Owner / Applicant | Halcyon Ridge Holding Corp.",
+      "source": {
+        "document": "PRM-03",
+        "section": "Permit details"
+      },
+      "confidence": 0.94,
+      "suggested_action": "Contractor to request a corrected Mechanical Permit before MS-4 (23 Nov 2026)."
+    },
+    {
+      "id": "CHK-26",
+      "rule_id": "P-SIT-01",
+      "category": "Permit name and site match",
+      "title": "Permit site address matches",
+      "status": "flag",
+      "severity": "High",
+      "finding": "The Mechanical Permit gives the address as 86 Sampaguita Ridge Avenue; the contract Site is 88 Sampaguita Ridge Avenue. Other permits match.",
+      "evidence_quote": "86 Sampaguita Ridge Avenue",
+      "source": {
+        "document": "PRM-03",
+        "section": "Location of Installation"
+      },
+      "confidence": 0.93,
+      "suggested_action": "Correct the address in the same amendment request as the holder name."
+    },
+    {
+      "id": "CHK-27",
+      "rule_id": "P-SCO-01",
+      "category": "Permit scope match",
+      "title": "Permit scope covers contract scope",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "Building, Electrical, Mechanical and Sanitary permit scopes match Annex A items A1-A7. The Electrical Permit does not mention data cabling containment (A3); this is usually not separately permitted, but worth confirming.",
+      "evidence_quote": "New lighting, power outlets, two (2) distribution boards and associated wiring for office fit-out",
+      "source": {
+        "document": "PRM-02",
+        "section": "Scope of Work"
+      },
+      "confidence": 0.8,
+      "suggested_action": "Confirm with the electrical engineer that data containment needs no separate approval."
+    },
+    {
+      "id": "CHK-28",
+      "rule_id": "P-CON-01",
+      "category": "Permit conditions",
+      "title": "Permit conditions fit the schedule",
+      "status": "pass",
+      "severity": "Medium",
+      "finding": "The Building Permit's after-hours noisy-works condition matches Clause 4.5 of the contract. Inspection hold points (electrical rough-in, plumbing pressure test) fit within the milestone durations.",
+      "evidence_quote": "Demolition and other noisy works shall be carried out only outside the building's business hours, as set by the Building Administration.",
+      "source": {
+        "document": "PRM-01",
+        "section": "Condition 2"
+      },
+      "confidence": 0.88,
+      "suggested_action": "Add inspection hold points to the schedule and site induction."
+    },
+    {
+      "id": "CHK-29",
+      "rule_id": "P-CMP-01",
+      "category": "Permit completeness",
+      "title": "All required permits on file",
+      "status": "missing",
+      "severity": "High",
+      "finding": "The Fire Safety Evaluation Clearance is required (Annex C Part A, Contractor) for MS-6 starting 4 Jan 2027, but it is not on file and not in the Permit Register. The Signage Permit (MS-7) is also not on file.",
+      "evidence_quote": "Fire Safety Evaluation Clearance | Fire authority having jurisdiction",
+      "source": {
+        "document": "CON",
+        "section": "Annex C, Part A"
+      },
+      "confidence": 0.95,
+      "suggested_action": "Instruct the Contractor to apply for the FSEC now and track weekly; block MS-6 until issued."
+    },
+    {
+      "id": "CHK-30",
+      "rule_id": "P-REN-01",
+      "category": "Permit renewal",
+      "title": "Renewal lead time planned",
+      "status": "flag",
+      "severity": "Medium",
+      "finding": "The Sanitary/Plumbing Permit expires 15 Apr 2027, only 15 days after Practical Completion (policy buffer: 60 days). Its own condition requires renewal 30 days before expiry, i.e. by 16 Mar 2027 during commissioning.",
+      "evidence_quote": "Valid Until | 15 April 2027",
+      "source": {
+        "document": "PRM-04",
+        "section": "Permit details"
+      },
+      "confidence": 0.9,
+      "suggested_action": "Assign a renewal owner and diarise the renewal application for 1 Mar 2027."
+    }
+  ],
+  "permits": [
+    {
+      "id": "PRM-01",
+      "required_permit": "Building Permit",
+      "status": "valid",
+      "permit_no": "SLM-BP-2026-04417",
+      "issuing_body": "Office of the Building Official",
+      "holder": "Halcyon Ridge Holdings, Inc.",
+      "responsible": "Employer",
+      "required_for": [
+        "MS-1",
+        "MS-2",
+        "MS-7"
+      ],
+      "issue_date": "2026-08-20",
+      "valid_from": "2026-08-20",
+      "expiry_date": "2027-08-19",
+      "notes": "Name and address match the contract. Noisy works after hours only.",
+      "source": {
+        "document": "PRM-01",
+        "section": "Permit details"
+      }
+    },
+    {
+      "id": "PRM-02",
+      "required_permit": "Electrical Permit",
+      "status": "valid",
+      "permit_no": "SLM-EP-2026-01982",
+      "issuing_body": "City Electrical Inspection Division",
+      "holder": "Halcyon Ridge Holdings, Inc.",
+      "responsible": "Contractor",
+      "required_for": [
+        "MS-3"
+      ],
+      "issue_date": "2026-09-28",
+      "valid_from": "2026-12-01",
+      "expiry_date": "2027-05-31",
+      "date_conflict": true,
+      "notes": "Not effective until 1 Dec 2026, but electrical rough-in (MS-3) starts 16 Nov 2026.",
+      "source": {
+        "document": "PRM-02",
+        "section": "Permit details"
+      }
+    },
+    {
+      "id": "PRM-03",
+      "required_permit": "Mechanical Permit",
+      "status": "mismatch",
+      "permit_no": "SLM-MP-2026-00731",
+      "issuing_body": "Office of the Building Official",
+      "holder": "Halcyon Ridge Holding Corp.",
+      "responsible": "Contractor",
+      "required_for": [
+        "MS-4"
+      ],
+      "issue_date": "2026-09-10",
+      "valid_from": "2026-09-10",
+      "expiry_date": "2027-09-09",
+      "notes": "Holder name and street number (86 vs 88) do not match the contract.",
+      "source": {
+        "document": "PRM-03",
+        "section": "Permit details"
+      }
+    },
+    {
+      "id": "PRM-04",
+      "required_permit": "Sanitary/Plumbing Permit",
+      "status": "expiring",
+      "permit_no": "SLM-SP-2026-00512",
+      "issuing_body": "Office of the Building Official",
+      "holder": "Halcyon Ridge Holdings, Inc.",
+      "responsible": "Contractor",
+      "required_for": [
+        "MS-5",
+        "MS-8"
+      ],
+      "issue_date": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "expiry_date": "2027-04-15",
+      "notes": "Expires 15 days after Practical Completion; renewal due by 16 Mar 2027.",
+      "source": {
+        "document": "PRM-04",
+        "section": "Permit details"
+      }
+    },
+    {
+      "id": "PRM-05",
+      "required_permit": "Barangay Construction Clearance",
+      "status": "expired",
+      "permit_no": "BTV-CC-2025-0388",
+      "issuing_body": "Barangay Tala Verde",
+      "holder": "Halcyon Ridge Holdings, Inc.",
+      "responsible": "Employer",
+      "required_for": [
+        "MS-1"
+      ],
+      "issue_date": "2025-09-01",
+      "valid_from": "2025-09-01",
+      "expiry_date": "2026-08-31",
+      "notes": "Expired 31 Aug 2026, before mobilisation on 19 Oct 2026.",
+      "source": {
+        "document": "PRM-05",
+        "section": "Permit details"
+      }
+    },
+    {
+      "id": "PRM-FSEC",
+      "required_permit": "Fire Safety Evaluation Clearance",
+      "status": "missing",
+      "permit_no": null,
+      "issuing_body": "Fire authority having jurisdiction",
+      "holder": null,
+      "responsible": "Contractor",
+      "required_for": [
+        "MS-6"
+      ],
+      "issue_date": null,
+      "valid_from": null,
+      "expiry_date": null,
+      "notes": "Required by Annex C Part A; not on file and not in the Permit Register.",
+      "source": {
+        "document": "CON",
+        "section": "Annex C, Part A"
+      }
+    },
+    {
+      "id": "PRM-SIGN",
+      "required_permit": "Signage Permit",
+      "status": "missing",
+      "permit_no": null,
+      "issuing_body": "City of San Lorenzo del Mar",
+      "holder": null,
+      "responsible": "Unassigned",
+      "required_for": [
+        "MS-7"
+      ],
+      "issue_date": null,
+      "valid_from": null,
+      "expiry_date": null,
+      "notes": "Required by Clause 4.6; no party assigned in Annex C; not on file.",
+      "source": {
+        "document": "CON",
+        "section": "Clause 4.6"
+      }
+    }
+  ],
+  "timeline": {
+    "range": {
+      "start": "2026-08-01",
+      "end": "2027-06-30"
+    },
+    "today": "2026-10-02",
+    "milestones": [
+      {
+        "id": "MS-1",
+        "name": "Mobilisation and site protection",
+        "start": "2026-10-19",
+        "end": "2026-10-30",
+        "requires_permits": [
+          "PRM-01",
+          "PRM-05"
+        ]
+      },
+      {
+        "id": "MS-2",
+        "name": "Strip-out and demolition",
+        "start": "2026-11-02",
+        "end": "2026-11-20",
+        "requires_permits": [
+          "PRM-01"
+        ]
+      },
+      {
+        "id": "MS-3",
+        "name": "Electrical rough-in",
+        "start": "2026-11-16",
+        "end": "2026-12-18",
+        "requires_permits": [
+          "PRM-02"
+        ]
+      },
+      {
+        "id": "MS-4",
+        "name": "HVAC ductwork and mechanical",
+        "start": "2026-11-23",
+        "end": "2027-01-29",
+        "requires_permits": [
+          "PRM-03"
+        ]
+      },
+      {
+        "id": "MS-5",
+        "name": "Plumbing and sanitary",
+        "start": "2026-11-30",
+        "end": "2027-01-15",
+        "requires_permits": [
+          "PRM-04"
+        ]
+      },
+      {
+        "id": "MS-6",
+        "name": "Fire sprinkler and alarm modification",
+        "start": "2027-01-04",
+        "end": "2027-02-12",
+        "requires_permits": [
+          "PRM-FSEC"
+        ]
+      },
+      {
+        "id": "MS-7",
+        "name": "Partitions, finishes, joinery, signage",
+        "start": "2027-01-11",
+        "end": "2027-03-05",
+        "requires_permits": [
+          "PRM-01",
+          "PRM-SIGN"
+        ]
+      },
+      {
+        "id": "MS-8",
+        "name": "Testing and commissioning",
+        "start": "2027-03-01",
+        "end": "2027-03-19",
+        "requires_permits": [
+          "PRM-02",
+          "PRM-03",
+          "PRM-04",
+          "PRM-FSEC"
+        ]
+      },
+      {
+        "id": "MS-9",
+        "name": "Practical Completion",
+        "start": "2027-03-31",
+        "end": "2027-03-31",
+        "requires_permits": []
+      }
+    ],
+    "permit_windows": [
+      {
+        "permit_id": "PRM-01",
+        "name": "Building Permit",
+        "start": "2026-08-20",
+        "end": "2027-08-19",
+        "status": "valid"
+      },
+      {
+        "permit_id": "PRM-02",
+        "name": "Electrical Permit",
+        "start": "2026-12-01",
+        "end": "2027-05-31",
+        "status": "valid"
+      },
+      {
+        "permit_id": "PRM-03",
+        "name": "Mechanical Permit",
+        "start": "2026-09-10",
+        "end": "2027-09-09",
+        "status": "mismatch"
+      },
+      {
+        "permit_id": "PRM-04",
+        "name": "Sanitary/Plumbing Permit",
+        "start": "2026-09-01",
+        "end": "2027-04-15",
+        "status": "expiring"
+      },
+      {
+        "permit_id": "PRM-05",
+        "name": "Barangay Construction Clearance",
+        "start": "2025-09-01",
+        "end": "2026-08-31",
+        "status": "expired"
+      },
+      {
+        "permit_id": "PRM-FSEC",
+        "name": "Fire Safety Evaluation Clearance",
+        "start": null,
+        "end": null,
+        "status": "missing"
+      },
+      {
+        "permit_id": "PRM-SIGN",
+        "name": "Signage Permit",
+        "start": null,
+        "end": null,
+        "status": "missing"
+      }
+    ],
+    "securities": [
+      {
+        "id": "SEC-BOND",
+        "name": "Performance bond",
+        "start": "2026-09-25",
+        "end": "2027-02-28",
+        "status": "flag",
+        "note": "Delivery due within 10 days of 15 Sep 2026; valid until 28 Feb 2027."
+      },
+      {
+        "id": "SEC-CAR",
+        "name": "CAR insurance",
+        "start": "2026-10-19",
+        "end": "2028-03-31",
+        "status": "valid",
+        "note": "Commencement to end of defects period."
+      }
+    ],
+    "conflicts": [
+      {
+        "id": "TL-1",
+        "milestone_id": "MS-3",
+        "permit_id": "PRM-02",
+        "type": "starts_before_valid",
+        "description": "Electrical rough-in starts 16 Nov 2026; Electrical Permit valid only from 1 Dec 2026.",
+        "start": "2026-11-16",
+        "end": "2026-11-30",
+        "days": 15,
+        "linked_finding_ids": [
+          "CHK-24",
+          "XC-01"
+        ]
+      },
+      {
+        "id": "TL-2",
+        "milestone_id": "MS-1",
+        "permit_id": "PRM-05",
+        "type": "expired_before_start",
+        "description": "Barangay Construction Clearance expired 31 Aug 2026, 49 days before mobilisation.",
+        "start": "2026-10-19",
+        "end": "2026-10-30",
+        "days": 49,
+        "linked_finding_ids": [
+          "CHK-23",
+          "XC-02"
+        ]
+      },
+      {
+        "id": "TL-3",
+        "milestone_id": "MS-6",
+        "permit_id": "PRM-FSEC",
+        "type": "no_permit",
+        "description": "Fire sprinkler works have no Fire Safety Evaluation Clearance on file.",
+        "start": "2027-01-04",
+        "end": "2027-02-12",
+        "days": null,
+        "linked_finding_ids": [
+          "CHK-29",
+          "XC-04"
+        ]
+      },
+      {
+        "id": "TL-4",
+        "milestone_id": "MS-7",
+        "permit_id": "PRM-SIGN",
+        "type": "no_permit",
+        "description": "Signage installation has no Signage Permit and no responsible party.",
+        "start": "2027-01-11",
+        "end": "2027-03-05",
+        "days": null,
+        "linked_finding_ids": [
+          "CHK-21",
+          "XC-05"
+        ]
+      },
+      {
+        "id": "TL-5",
+        "milestone_id": "MS-9",
+        "permit_id": "SEC-BOND",
+        "type": "security_expiry",
+        "description": "Performance bond expires 28 Feb 2027, 31 days before Practical Completion.",
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "days": 31,
+        "linked_finding_ids": [
+          "CHK-12",
+          "XC-06"
+        ]
+      }
+    ]
+  },
+  "cross_checks": [
+    {
+      "id": "XC-01",
+      "type": "date_conflict",
+      "status": "issue",
+      "severity": "High",
+      "title": "Electrical rough-in starts 15 days before the permit is valid",
+      "finding": "Annex B schedules MS-3 from 16 Nov 2026, but the Electrical Permit takes effect on 1 Dec 2026 and forbids work before that date. Clause 9.4 also forbids it. Neither document alone shows the conflict.",
+      "evidence": [
+        {
+          "quote": "MS-3 | Electrical rough-in | 16 November 2026",
+          "source": {
+            "document": "CON",
+            "section": "Annex B"
+          }
+        },
+        {
+          "quote": "Valid From | 1 December 2026",
+          "source": {
+            "document": "PRM-02",
+            "section": "Permit details"
+          }
+        },
+        {
+          "quote": "No electrical installation work shall be carried out before that date.",
+          "source": {
+            "document": "PRM-02",
+            "section": "Condition 1"
+          }
+        }
+      ],
+      "confidence": 0.95,
+      "suggested_action": "Re-sequence MS-3 to 1 Dec 2026 (start with strip-out or mechanical first) or request an earlier effective date.",
+      "linked_finding_ids": [
+        "CHK-24"
+      ]
+    },
+    {
+      "id": "XC-02",
+      "type": "date_conflict",
+      "status": "issue",
+      "severity": "High",
+      "title": "Mobilisation planned on an expired Barangay clearance",
+      "finding": "Mobilisation (MS-1) starts 19 Oct 2026; the Barangay Construction Clearance expired on 31 Aug 2026. The Employer is responsible for it (Annex C Part B).",
+      "evidence": [
+        {
+          "quote": "MS-1 | Mobilisation and site protection | 19 October 2026",
+          "source": {
+            "document": "CON",
+            "section": "Annex B"
+          }
+        },
+        {
+          "quote": "Valid Until | 31 August 2026",
+          "source": {
+            "document": "PRM-05",
+            "section": "Permit details"
+          }
+        }
+      ],
+      "confidence": 0.97,
+      "suggested_action": "Employer to renew the clearance before 19 Oct 2026.",
+      "linked_finding_ids": [
+        "CHK-23"
+      ]
+    },
+    {
+      "id": "XC-03",
+      "type": "name_mismatch",
+      "status": "issue",
+      "severity": "High",
+      "title": "Mechanical Permit: wrong holder name and street number",
+      "finding": "The contract requires every permit in the exact name 'Halcyon Ridge Holdings, Inc.' at 88 Sampaguita Ridge Avenue. The Mechanical Permit says 'Halcyon Ridge Holding Corp.' at 86 Sampaguita Ridge Avenue.",
+      "evidence": [
+        {
+          "quote": "All Permits shall be issued in the name of the Employer, Halcyon Ridge Holdings, Inc., and shall state the Site address exactly as defined in Clause 1.1.",
+          "source": {
+            "document": "CON",
+            "section": "Clause 9.3"
+          }
+        },
+        {
+          "quote": "Owner / Applicant | Halcyon Ridge Holding Corp.",
+          "source": {
+            "document": "PRM-03",
+            "section": "Permit details"
+          }
+        },
+        {
+          "quote": "86 Sampaguita Ridge Avenue",
+          "source": {
+            "document": "PRM-03",
+            "section": "Location of Installation"
+          }
+        }
+      ],
+      "confidence": 0.94,
+      "suggested_action": "Contractor to request a corrected permit before MS-4 starts on 23 Nov 2026.",
+      "linked_finding_ids": [
+        "CHK-25",
+        "CHK-26"
+      ]
+    },
+    {
+      "id": "XC-04",
+      "type": "missing_permit",
+      "status": "issue",
+      "severity": "High",
+      "title": "Fire Safety Evaluation Clearance required but not on file",
+      "finding": "Annex C makes the Contractor responsible for the FSEC, needed for MS-6 from 4 Jan 2027. The Permit Register (updated 30 Sep 2026) lists only five permits and no FSEC.",
+      "evidence": [
+        {
+          "quote": "Fire Safety Evaluation Clearance | Fire authority having jurisdiction",
+          "source": {
+            "document": "CON",
+            "section": "Annex C, Part A"
+          }
+        },
+        {
+          "quote": "MS-6 | Fire sprinkler and alarm modification | 4 January 2027",
+          "source": {
+            "document": "CON",
+            "section": "Annex B"
+          }
+        },
+        {
+          "quote": "Last updated: 30 September 2026",
+          "source": {
+            "document": "REG",
+            "section": "Header (5 entries, no FSEC)"
+          }
+        }
+      ],
+      "confidence": 0.95,
+      "suggested_action": "Instruct the Contractor to apply now; track weekly; MS-6 cannot start without it.",
+      "linked_finding_ids": [
+        "CHK-29"
+      ]
+    },
+    {
+      "id": "XC-05",
+      "type": "responsibility_gap",
+      "status": "issue",
+      "severity": "High",
+      "title": "Signage Permit required, but nobody is responsible",
+      "finding": "Clause 4.6 and Annex B (MS-7) need a Signage Permit, but Annex C Part A (Contractor) and Part B (Employer) do not list it.",
+      "evidence": [
+        {
+          "quote": "Exterior signage on the Level 12 facade shall be installed only upon issuance of the Signage Permit by the City.",
+          "source": {
+            "document": "CON",
+            "section": "Clause 4.6"
+          }
+        },
+        {
+          "quote": "MS-7 | Partitions, ceilings, finishes, joinery and signage | 11 January 2027",
+          "source": {
+            "document": "CON",
+            "section": "Annex B"
+          }
+        },
+        {
+          "quote": "Part A - Permits to be obtained by the Contractor",
+          "source": {
+            "document": "CON",
+            "section": "Annex C (no Signage Permit in Part A or B)"
+          }
+        }
+      ],
+      "confidence": 0.93,
+      "suggested_action": "Assign the Signage Permit by written instruction; apply by mid-November to be ready for MS-7.",
+      "linked_finding_ids": [
+        "CHK-21"
+      ]
+    },
+    {
+      "id": "XC-06",
+      "type": "security_expiry",
+      "status": "issue",
+      "severity": "High",
+      "title": "Performance bond expires before Practical Completion",
+      "finding": "The bond ends 28 Feb 2027 but Practical Completion is 31 Mar 2027, followed by a 12-month defects period.",
+      "evidence": [
+        {
+          "quote": "The performance bond shall remain valid until 28 February 2027.",
+          "source": {
+            "document": "CON",
+            "section": "Clause 15.2"
+          }
+        },
+        {
+          "quote": "\"Date for Practical Completion\" means 31 March 2027",
+          "source": {
+            "document": "CON",
+            "section": "Clause 1.1"
+          }
+        }
+      ],
+      "confidence": 0.97,
+      "suggested_action": "Require a bond extension to at least 28 Apr 2027 before mobilisation.",
+      "linked_finding_ids": [
+        "CHK-12"
+      ]
+    },
+    {
+      "id": "XC-07",
+      "type": "renewal_gap",
+      "status": "issue",
+      "severity": "Medium",
+      "title": "Plumbing permit expires 15 days after completion",
+      "finding": "Any slip in Practical Completion beyond 15 Apr 2027 would leave plumbing works unpermitted; renewal must be filed 30 days before expiry.",
+      "evidence": [
+        {
+          "quote": "Valid Until | 15 April 2027",
+          "source": {
+            "document": "PRM-04",
+            "section": "Permit details"
+          }
+        },
+        {
+          "quote": "\"Date for Practical Completion\" means 31 March 2027",
+          "source": {
+            "document": "CON",
+            "section": "Clause 1.1"
+          }
+        },
+        {
+          "quote": "Renewal, if required, shall be applied for at least thirty (30) days before the Valid Until date.",
+          "source": {
+            "document": "PRM-04",
+            "section": "Condition 3"
+          }
+        }
+      ],
+      "confidence": 0.9,
+      "suggested_action": "Diarise renewal for 1 Mar 2027 with a named owner.",
+      "linked_finding_ids": [
+        "CHK-30"
+      ]
+    },
+    {
+      "id": "XC-08",
+      "type": "condition_vs_schedule",
+      "status": "ok",
+      "severity": "Low",
+      "title": "Noisy-works condition matches the contract",
+      "finding": "The Building Permit's after-hours condition for demolition is already reflected in Clause 4.5 of the contract.",
+      "evidence": [
+        {
+          "quote": "Demolition and other noisy works shall be carried out only outside the building's business hours, as set by the Building Administration.",
+          "source": {
+            "document": "PRM-01",
+            "section": "Condition 2"
+          }
+        },
+        {
+          "quote": "Noisy works, including demolition, core drilling and chasing, shall be scheduled outside the Tower's business hours",
+          "source": {
+            "document": "CON",
+            "section": "Clause 4.5"
+          }
+        }
+      ],
+      "confidence": 0.9,
+      "suggested_action": "No change needed; brief night-shift supervision for MS-2.",
+      "linked_finding_ids": [
+        "CHK-28"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "ACT-01",
+      "task": "Renew the Barangay Construction Clearance before mobilisation",
+      "owner_role": "Employer's Project Manager",
+      "due": "2026-10-12",
+      "priority": "High",
+      "linked_finding_ids": [
+        "CHK-23",
+        "XC-02"
+      ]
+    },
+    {
+      "id": "ACT-02",
+      "task": "Re-sequence electrical rough-in (MS-3) to start on or after 1 Dec 2026, or obtain an earlier permit effective date",
+      "owner_role": "Contractor's Planner / Project Manager",
+      "due": "2026-10-09",
+      "priority": "High",
+      "linked_finding_ids": [
+        "CHK-24",
+        "XC-01"
+      ]
+    },
+    {
+      "id": "ACT-03",
+      "task": "Instruct the Contractor to apply for the Fire Safety Evaluation Clearance and report weekly",
+      "owner_role": "Project Manager",
+      "due": "2026-10-09",
+      "priority": "High",
+      "linked_finding_ids": [
+        "CHK-29",
+        "XC-04"
+      ]
+    },
+    {
+      "id": "ACT-04",
+      "task": "Request a corrected Mechanical Permit (holder name and street number)",
+      "owner_role": "Contractor's Site Engineer",
+      "due": "2026-10-30",
+      "priority": "High",
+      "linked_finding_ids": [
+        "CHK-25",
+        "CHK-26",
+        "XC-03"
+      ]
+    },
+    {
+      "id": "ACT-05",
+      "task": "Negotiate a liquidated damages cap (max 10% of Contract Price) and remove the LD carve-out in Clause 17.1",
+      "owner_role": "Contracts Manager / Legal",
+      "due": "2026-10-09",
+      "priority": "High",
+      "linked_finding_ids": [
+        "CHK-08",
+        "CHK-13"
+      ]
+    },
+    {
+      "id": "ACT-06",
+      "task": "Require the performance bond to be extended to at least 28 Apr 2027",
+      "owner_role": "Contracts Manager",
+      "due": "2026-10-16",
+      "priority": "High",
+      "linked_finding_ids": [
+        "CHK-12",
+        "XC-06"
+      ]
+    },
+    {
+      "id": "ACT-07",
+      "task": "Assign responsibility for the Signage Permit and start the application",
+      "owner_role": "Project Manager",
+      "due": "2026-10-16",
+      "priority": "Medium",
+      "linked_finding_ids": [
+        "CHK-21",
+        "XC-05"
+      ]
+    },
+    {
+      "id": "ACT-08",
+      "task": "Negotiate payment terms to 60 days or less, or confirm cash-flow impact with Finance",
+      "owner_role": "Contracts Manager / Finance",
+      "due": "2026-10-16",
+      "priority": "Medium",
+      "linked_finding_ids": [
+        "CHK-04"
+      ]
+    },
+    {
+      "id": "ACT-09",
+      "task": "Agree firm delivery dates for Employer-supplied furniture and AV equipment",
+      "owner_role": "Project Manager / Procurement",
+      "due": "2026-10-30",
+      "priority": "Medium",
+      "linked_finding_ids": [
+        "CHK-02"
+      ]
+    },
+    {
+      "id": "ACT-10",
+      "task": "Diarise Sanitary/Plumbing Permit renewal application (30 days before 15 Apr 2027)",
+      "owner_role": "Contractor's Site Engineer",
+      "due": "2027-03-01",
+      "priority": "Low",
+      "linked_finding_ids": [
+        "CHK-30",
+        "XC-07"
+      ]
+    }
+  ]
+}
